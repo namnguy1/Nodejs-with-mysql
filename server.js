@@ -2,9 +2,12 @@
 const express = require('express');
 const dbConfig = require('./config/config');
 const User = require('./models/User');
-const sequelize = require('./config/config');
+const { sequelize } = require('./config/config');
 const userRoutes = require('./routes/userRoutes');
+
+
 const app = express();
+
 app.use(express.json());
 app.use('/api/users', userRoutes);
 
